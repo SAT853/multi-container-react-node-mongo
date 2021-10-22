@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const { connectDB } = require("./config/db");
 const routes = require("./routes/routes");
 
@@ -9,6 +10,9 @@ app.use(express.json());
 if (process.env.NODE_ENV !== "test") {
   connectDB();
 }
+
+// cors
+app.use(cors({ origin: true, credentials: true }));
 
 // for testing purposes
 app.get("/test", (req, res) => {
