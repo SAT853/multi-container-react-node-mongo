@@ -1,7 +1,7 @@
 import React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import TodoList from "./components/TodoList";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 const queryClient = new QueryClient();
