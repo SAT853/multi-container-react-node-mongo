@@ -10,7 +10,7 @@ const TodoList = () => {
 
   if (error) return "An error has occurred: " + error.message;
 
-  return <ul className="list-container">{todoList && todoList.length && todoList.map((i) => <li key={i._id}>{i.item_name}</li>)}</ul>;
+  return <ul className="list-container">{todoList && todoList.length > 0 && todoList.map((i) => <li key={i._id}>{i.item_name}</li>)}</ul>;
 };
 
 export default TodoList;
