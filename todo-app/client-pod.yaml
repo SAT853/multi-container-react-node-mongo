@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  # annotations:
+  #   kompose.cmd: kompose convert
+  #   kompose.version: 1.24.0 (4a2a0458)
+  # creationTimestamp: null
+  name: client
+  labels:
+    io.kompose.service: client
+spec:
+  containers:
+    - image: client
+      name: client
+      ports:
+        - containerPort: 3000
+      resources: {}
+      volumeMounts:
+        - mountPath: /app/node_modules
+          name: client-claim0
+  restartPolicy: OnFailure
+  volumes:
+    - name: client-claim0
+      persistentVolumeClaim:
+        claimName: client-claim0
+status: {}
